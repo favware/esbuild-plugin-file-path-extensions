@@ -1,0 +1,125 @@
+// Vitest Snapshot v1
+
+exports[`JS based CJS > GIVEN cjsExtension = "cjs" THEN uses cjs as file extension 1`] = `
+"\\"use strict\\";
+var __defProp = Object.defineProperty;
+var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
+var __getOwnPropNames = Object.getOwnPropertyNames;
+var __hasOwnProp = Object.prototype.hasOwnProperty;
+var __esm = (fn, res) => function __init() {
+  return fn && (res = (0, fn[__getOwnPropNames(fn)[0]])(fn = 0)), res;
+};
+var __commonJS = (cb, mod) => function __require() {
+  return mod || (0, cb[__getOwnPropNames(cb)[0]])((mod = { exports: {} }).exports, mod), mod.exports;
+};
+var __export = (target, all) => {
+  for (var name in all)
+    __defProp(target, name, { get: all[name], enumerable: true });
+};
+var __copyProps = (to, from, except, desc) => {
+  if (from && typeof from === \\"object\\" || typeof from === \\"function\\") {
+    for (let key of __getOwnPropNames(from))
+      if (!__hasOwnProp.call(to, key) && key !== except)
+        __defProp(to, key, { get: () => from[key], enumerable: !(desc = __getOwnPropDesc(from, key)) || desc.enumerable });
+  }
+  return to;
+};
+var __toCommonJS = (mod) => __copyProps(__defProp({}, \\"__esModule\\", { value: true }), mod);
+
+// tests/fixtures/importables/importable.cjs
+var require_importable = __commonJS({
+  \\"tests/fixtures/importables/importable.cjs\\"(exports2, module2) {
+    \\"use strict\\";
+    module2.exports = {
+      exportedCJSFunction() {
+        return 1 + 1;
+      }
+    };
+  }
+});
+
+// tests/fixtures/importables/importable.mjs
+var importable_exports = {};
+__export(importable_exports, {
+  exportedMJSFunction: () => exportedMJSFunction
+});
+function exportedMJSFunction() {
+  return 1 + 1;
+}
+var init_importable = __esm({
+  \\"tests/fixtures/importables/importable.mjs\\"() {
+    \\"use strict\\";
+  }
+});
+
+// tests/fixtures/build-in/javascript.cjs
+var { exportedTSFunction } = require(\\"../importables/importable.cjs\\");
+var { exportedCJSFunction } = require_importable();
+var { exportedMJSFunction: exportedMJSFunction2 } = (init_importable(), __toCommonJS(importable_exports));
+exportedTSFunction();
+exportedCJSFunction();
+exportedMJSFunction2();
+"
+`;
+
+exports[`JS based CJS > GIVEN no plugin options THEN adds js as file extension 1`] = `
+"\\"use strict\\";
+var __defProp = Object.defineProperty;
+var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
+var __getOwnPropNames = Object.getOwnPropertyNames;
+var __hasOwnProp = Object.prototype.hasOwnProperty;
+var __esm = (fn, res) => function __init() {
+  return fn && (res = (0, fn[__getOwnPropNames(fn)[0]])(fn = 0)), res;
+};
+var __commonJS = (cb, mod) => function __require() {
+  return mod || (0, cb[__getOwnPropNames(cb)[0]])((mod = { exports: {} }).exports, mod), mod.exports;
+};
+var __export = (target, all) => {
+  for (var name in all)
+    __defProp(target, name, { get: all[name], enumerable: true });
+};
+var __copyProps = (to, from, except, desc) => {
+  if (from && typeof from === \\"object\\" || typeof from === \\"function\\") {
+    for (let key of __getOwnPropNames(from))
+      if (!__hasOwnProp.call(to, key) && key !== except)
+        __defProp(to, key, { get: () => from[key], enumerable: !(desc = __getOwnPropDesc(from, key)) || desc.enumerable });
+  }
+  return to;
+};
+var __toCommonJS = (mod) => __copyProps(__defProp({}, \\"__esModule\\", { value: true }), mod);
+
+// tests/fixtures/importables/importable.cjs
+var require_importable = __commonJS({
+  \\"tests/fixtures/importables/importable.cjs\\"(exports2, module2) {
+    \\"use strict\\";
+    module2.exports = {
+      exportedCJSFunction() {
+        return 1 + 1;
+      }
+    };
+  }
+});
+
+// tests/fixtures/importables/importable.mjs
+var importable_exports = {};
+__export(importable_exports, {
+  exportedMJSFunction: () => exportedMJSFunction
+});
+function exportedMJSFunction() {
+  return 1 + 1;
+}
+var init_importable = __esm({
+  \\"tests/fixtures/importables/importable.mjs\\"() {
+    \\"use strict\\";
+  }
+});
+
+// tests/fixtures/build-in/javascript.cjs
+var { exportedTSFunction } = require(\\"../importables/importable.js\\");
+var { exportedCJSFunction } = require_importable();
+var { exportedMJSFunction: exportedMJSFunction2 } = (init_importable(), __toCommonJS(importable_exports));
+exportedTSFunction();
+exportedCJSFunction();
+exportedMJSFunction2();
+"
+`;
