@@ -1,0 +1,11 @@
+{
+  "extends": "./tsconfig.base.json",
+  "compilerOptions": {
+    "noEmit": true,
+    "types": ["vitest/globals"],
+    "lib": ["esnext"],
+    "allowJs": true,
+    "checkJs": true
+  },
+  "include": ["src", "tests", "scripts", "vitest.config.ts", "tsup.config.ts"]
+}

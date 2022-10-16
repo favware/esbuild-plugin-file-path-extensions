@@ -1,0 +1,6 @@
+CHANGELOG.md
+node_modules/
+dist/
+coverage/
+.yarn/
+tests/fixtures/build-out/

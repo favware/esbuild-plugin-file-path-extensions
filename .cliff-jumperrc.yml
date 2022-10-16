@@ -1,0 +1,4 @@
+name: esbuild-plugin-file-path-extensions
+packagePath: .
+commitMessageTemplate: 'chore(release): release {{new-version}}'
+tagTemplate: v{{new-version}}
