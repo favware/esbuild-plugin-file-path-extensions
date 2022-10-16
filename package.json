@@ -18,7 +18,7 @@
     "test": "vitest run",
     "test:clean": "node scripts/clean-test-output.mjs",
     "build": "tsup",
-    "bump": "cliff-jumper && yarn test -u",
+    "bump": "cliff-jumper",
     "check-update": "cliff-jumper --dry-run",
     "postinstall": "husky install .github/husky",
     "prepack": "yarn build && pinst --disable",
