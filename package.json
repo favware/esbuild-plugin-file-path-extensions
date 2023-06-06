@@ -88,10 +88,10 @@
   },
   "resolutions": {
     "ansi-regex": "^5.0.1",
-    "minimist": "^1.2.7"
+    "minimist": "^1.2.8"
   },
   "eslintConfig": {
     "extends": "@sapphire"
   },
-  "packageManager": "yarn@3.2.4"
+  "packageManager": "yarn@3.6.0"
 }
