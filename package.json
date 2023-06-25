@@ -25,8 +25,8 @@
     "postpack": "pinst --enable"
   },
   "devDependencies": {
-    "@commitlint/cli": "^17.6.5",
-    "@commitlint/config-conventional": "^17.6.5",
+    "@commitlint/cli": "^17.6.6",
+    "@commitlint/config-conventional": "^17.6.6",
     "@favware/cliff-jumper": "2.1.1",
     "@sapphire/eslint-config": "^4.4.2",
     "@sapphire/prettier-config": "^1.4.5",
@@ -36,7 +36,7 @@
     "@typescript-eslint/eslint-plugin": "^5.60.0",
     "@typescript-eslint/parser": "^5.60.0",
     "cz-conventional-changelog": "^3.3.0",
-    "esbuild": "^0.18.5",
+    "esbuild": "^0.18.7",
     "esbuild-plugin-version-injector": "^1.1.0",
     "eslint": "^8.43.0",
     "eslint-config-prettier": "^8.8.0",
