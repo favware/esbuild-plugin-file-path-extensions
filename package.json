@@ -32,22 +32,22 @@
     "@sapphire/prettier-config": "^2.0.0",
     "@sapphire/result": "^2.6.4",
     "@sapphire/ts-config": "^4.0.1",
-    "@types/node": "^18.17.5",
-    "@typescript-eslint/eslint-plugin": "^6.3.0",
-    "@typescript-eslint/parser": "^6.3.0",
+    "@types/node": "^18.17.6",
+    "@typescript-eslint/eslint-plugin": "^6.4.0",
+    "@typescript-eslint/parser": "^6.4.0",
     "cz-conventional-changelog": "^3.3.0",
-    "esbuild": "^0.19.1",
+    "esbuild": "^0.19.2",
     "esbuild-plugin-version-injector": "^1.2.0",
     "eslint": "^8.47.0",
     "eslint-config-prettier": "^9.0.0",
     "eslint-plugin-prettier": "^5.0.0",
     "husky": "^8.0.3",
-    "lint-staged": "^13.2.3",
+    "lint-staged": "^13.3.0",
     "pinst": "^3.0.0",
-    "prettier": "^3.0.1",
+    "prettier": "^3.0.2",
     "tsup": "^7.2.0",
     "typescript": "^5.1.6",
-    "vitest": "^0.34.1"
+    "vitest": "^0.34.2"
   },
   "repository": {
     "type": "git",
@@ -93,5 +93,5 @@
   "eslintConfig": {
     "extends": "@sapphire"
   },
-  "packageManager": "yarn@3.6.1"
+  "packageManager": "yarn@3.6.2"
 }
