@@ -11,17 +11,19 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Project
-        uses: actions/checkout@93ea575cb5d8a053eaa0ac8fa3b40d7e05a33cc8 # tag=v3
+        uses: actions/checkout@v3
         with:
           fetch-depth: 0
-      - name: Use Node.js v16 with GitHub Package Registry
-        uses: actions/setup-node@8c91899e586c5b171469028077307d293428b516 # tag=v3
+      - name: Use Node.js v18 with GitHub Package Registry
+        uses: actions/setup-node@v3
         with:
-          node-version: 16
+          node-version: 18
           cache: yarn
           registry-url: https://registry.yarnpkg.com/
+      - name: Replace name in package.json
+        run: cat <<< $(jq '.name = "@favware/esbuild-plugin-file-path-extensions"' package.json) > package.json
       - name: Install Dependencies
-        run: yarn --immutable
+        run: yarn --immutable=false
       - name: Build package
         run: yarn build
       - name: Publish to GitHub
