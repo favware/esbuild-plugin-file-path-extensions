@@ -32,13 +32,13 @@
     "@sapphire/prettier-config": "^2.0.0",
     "@sapphire/result": "^2.6.4",
     "@sapphire/ts-config": "^5.0.0",
-    "@types/node": "^18.17.14",
-    "@typescript-eslint/eslint-plugin": "^6.5.0",
-    "@typescript-eslint/parser": "^6.5.0",
+    "@types/node": "^18.17.15",
+    "@typescript-eslint/eslint-plugin": "^6.6.0",
+    "@typescript-eslint/parser": "^6.6.0",
     "cz-conventional-changelog": "^3.3.0",
     "esbuild": "^0.19.2",
-    "esbuild-plugin-version-injector": "^1.2.0",
-    "eslint": "^8.48.0",
+    "esbuild-plugin-version-injector": "^1.2.1",
+    "eslint": "^8.49.0",
     "eslint-config-prettier": "^9.0.0",
     "eslint-plugin-prettier": "^5.0.0",
     "husky": "^8.0.3",
@@ -47,7 +47,7 @@
     "prettier": "^3.0.3",
     "tsup": "^7.2.0",
     "typescript": "^5.2.2",
-    "vitest": "^0.34.3"
+    "vitest": "^0.34.4"
   },
   "repository": {
     "type": "git",
