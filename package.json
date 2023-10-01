@@ -25,18 +25,18 @@
     "postpack": "pinst --enable"
   },
   "devDependencies": {
-    "@commitlint/cli": "^17.7.1",
+    "@commitlint/cli": "^17.7.2",
     "@commitlint/config-conventional": "^17.7.0",
     "@favware/cliff-jumper": "2.2.0",
     "@sapphire/eslint-config": "^5.0.2",
     "@sapphire/prettier-config": "^2.0.0",
     "@sapphire/result": "^2.6.4",
     "@sapphire/ts-config": "^5.0.0",
-    "@types/node": "^18.17.19",
-    "@typescript-eslint/eslint-plugin": "^6.7.2",
-    "@typescript-eslint/parser": "^6.7.2",
+    "@types/node": "^18.18.1",
+    "@typescript-eslint/eslint-plugin": "^6.7.3",
+    "@typescript-eslint/parser": "^6.7.3",
     "cz-conventional-changelog": "^3.3.0",
-    "esbuild": "^0.19.3",
+    "esbuild": "^0.19.4",
     "esbuild-plugin-version-injector": "^1.2.1",
     "eslint": "^8.50.0",
     "eslint-config-prettier": "^9.0.0",
@@ -47,7 +47,7 @@
     "prettier": "^3.0.3",
     "tsup": "^7.2.0",
     "typescript": "^5.2.2",
-    "vitest": "^0.34.5"
+    "vitest": "^0.34.6"
   },
   "repository": {
     "type": "git",
