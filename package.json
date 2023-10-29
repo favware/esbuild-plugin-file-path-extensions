@@ -30,7 +30,7 @@
     "@sapphire/prettier-config": "^2.0.0",
     "@sapphire/result": "^2.6.4",
     "@sapphire/ts-config": "^5.0.0",
-    "@types/node": "^18.18.7",
+    "@types/node": "^20.8.9",
     "@typescript-eslint/eslint-plugin": "^6.9.0",
     "@typescript-eslint/parser": "^6.9.0",
     "cz-conventional-changelog": "^3.3.0",
@@ -89,5 +89,5 @@
   "eslintConfig": {
     "extends": "@sapphire"
   },
-  "packageManager": "yarn@3.6.4"
+  "packageManager": "yarn@4.0.1"
 }
