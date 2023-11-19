@@ -23,25 +23,25 @@
     "prepack": "yarn build"
   },
   "devDependencies": {
-    "@commitlint/cli": "^18.4.1",
-    "@commitlint/config-conventional": "^18.4.0",
-    "@favware/cliff-jumper": "2.2.1",
+    "@commitlint/cli": "^18.4.2",
+    "@commitlint/config-conventional": "^18.4.2",
+    "@favware/cliff-jumper": "2.2.3",
     "@sapphire/eslint-config": "^5.0.2",
     "@sapphire/prettier-config": "^2.0.0",
     "@sapphire/result": "^2.6.4",
     "@sapphire/ts-config": "^5.0.0",
-    "@types/node": "^20.9.0",
-    "@typescript-eslint/eslint-plugin": "^6.10.0",
-    "@typescript-eslint/parser": "^6.10.0",
+    "@types/node": "^20.9.2",
+    "@typescript-eslint/eslint-plugin": "^6.11.0",
+    "@typescript-eslint/parser": "^6.11.0",
     "cz-conventional-changelog": "^3.3.0",
     "esbuild": "^0.19.5",
     "esbuild-plugin-version-injector": "^1.2.1",
-    "eslint": "^8.53.0",
+    "eslint": "^8.54.0",
     "eslint-config-prettier": "^9.0.0",
     "eslint-plugin-prettier": "^5.0.1",
     "lint-staged": "^15.1.0",
-    "prettier": "^3.0.3",
-    "tsup": "^7.2.0",
+    "prettier": "^3.1.0",
+    "tsup": "^7.3.0",
     "typescript": "^5.2.2",
     "vitest": "^0.34.6"
   },
@@ -89,5 +89,5 @@
   "eslintConfig": {
     "extends": "@sapphire"
   },
-  "packageManager": "yarn@4.0.1"
+  "packageManager": "yarn@4.0.2"
 }
