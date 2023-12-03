@@ -99,10 +99,27 @@ async function getCjsExtension(build: PluginBuild, options: PluginOptions): Prom
   return isFunction(options.cjsExtension) ? options.cjsExtension(build.initialOptions) : options.cjsExtension;
 }
 
-function pathExtIsCommonJsLikeExtension(path: string): boolean {
+function pathExtIsJsLikeExtension(path: string): boolean {
   const ext = extname(path);
 
-  if (ext === '.js' || ext === '.cjs' || ext === '.mjs' || ext === '.ts' || ext === '.cts' || ext === '.mts') {
+  if (
+    // Regular extensions
+    ext === '.js' ||
+    ext === '.cjs' ||
+    ext === '.mjs' ||
+    // TypeScript extensions
+    ext === '.ts' ||
+    ext === '.cts' ||
+    ext === '.mts' ||
+    // JSX JavaScript extensions
+    ext === 'jsx' ||
+    ext === '.cjsx' ||
+    ext === '.mjsx' ||
+    // JSX TypeScript extensions
+    ext === '.tsx' ||
+    ext === '.ctsx' ||
+    ext === '.mtsx'
+  ) {
     return true;
   }
 
@@ -127,7 +144,7 @@ async function handleResolve(args: OnResolveArgs, build: PluginBuild, options: P
   }
 
   if (args.importer) {
-    const pathAlreadyHasExt = pathExtIsCommonJsLikeExtension(args.path);
+    const pathAlreadyHasExt = pathExtIsJsLikeExtension(args.path);
 
     if (!pathAlreadyHasExt) {
       return {
