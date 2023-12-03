@@ -144,7 +144,7 @@ async function handleResolve(args: OnResolveArgs, build: PluginBuild, options: P
 export const esbuildPluginFilePathExtensions = (
   options: PluginOptions = {
     filter: /.*/,
-    cjsExtension: 'js',
+    cjsExtension: 'cjs',
     esmExtension: 'mjs'
   }
 ): Plugin => {
