@@ -127,31 +127,33 @@ function pathExtIsJsLikeExtension(path: string): boolean {
 }
 
 async function handleResolve(args: OnResolveArgs, build: PluginBuild, options: PluginOptions): Promise<OnResolveResult | undefined> {
-  const isEsm = await getIsEsm(build, options);
-  const esmExtension = await getEsmExtension(build, options);
-  const cjsExtension = await getCjsExtension(build, options);
+  if (args.kind === 'import-statement') {
+    const isEsm = await getIsEsm(build, options);
+    const esmExtension = await getEsmExtension(build, options);
+    const cjsExtension = await getCjsExtension(build, options);
 
-  if (typeof isEsm !== 'boolean') {
-    throw new TypeError(`isEsm must be a boolean, received ${typeof isEsm} (${isEsm})`);
-  }
+    if (typeof isEsm !== 'boolean') {
+      throw new TypeError(`isEsm must be a boolean, received ${typeof isEsm} (${isEsm})`);
+    }
 
-  if (typeof cjsExtension !== 'string') {
-    throw new TypeError(`cjsExtension must be a string, received ${typeof cjsExtension} (${cjsExtension})`);
-  }
+    if (typeof cjsExtension !== 'string') {
+      throw new TypeError(`cjsExtension must be a string, received ${typeof cjsExtension} (${cjsExtension})`);
+    }
 
-  if (typeof esmExtension !== 'string') {
-    throw new TypeError(`esmExtension must be a string, received ${typeof esmExtension} (${esmExtension})`);
-  }
+    if (typeof esmExtension !== 'string') {
+      throw new TypeError(`esmExtension must be a string, received ${typeof esmExtension} (${esmExtension})`);
+    }
 
-  if (args.importer) {
-    const pathAlreadyHasExt = pathExtIsJsLikeExtension(args.path);
+    if (args.importer) {
+      const pathAlreadyHasExt = pathExtIsJsLikeExtension(args.path);
 
-    if (!pathAlreadyHasExt) {
-      return {
-        path: `${args.path}.${isEsm ? esmExtension : cjsExtension}`,
-        external: true,
-        namespace: options.namespace
-      };
+      if (!pathAlreadyHasExt) {
+        return {
+          path: `${args.path}.${isEsm ? esmExtension : cjsExtension}`,
+          external: true,
+          namespace: options.namespace
+        };
+      }
     }
   }
 
