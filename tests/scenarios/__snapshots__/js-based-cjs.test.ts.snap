@@ -26,6 +26,20 @@ var __copyProps = (to, from, except, desc) => {
 };
 var __toCommonJS = (mod) => __copyProps(__defProp({}, \\"__esModule\\", { value: true }), mod);
 
+// tests/fixtures/importables/importable.ts
+var importable_exports = {};
+__export(importable_exports, {
+  exportedTSFunction: () => exportedTSFunction
+});
+function exportedTSFunction() {
+  return 1 + 1;
+}
+var init_importable = __esm({
+  \\"tests/fixtures/importables/importable.ts\\"() {
+    \\"use strict\\";
+  }
+});
+
 // tests/fixtures/importables/importable.cjs
 var require_importable = __commonJS({
   \\"tests/fixtures/importables/importable.cjs\\"(exports2, module2) {
@@ -39,24 +53,24 @@ var require_importable = __commonJS({
 });
 
 // tests/fixtures/importables/importable.mjs
-var importable_exports = {};
-__export(importable_exports, {
+var importable_exports2 = {};
+__export(importable_exports2, {
   exportedMJSFunction: () => exportedMJSFunction
 });
 function exportedMJSFunction() {
   return 1 + 1;
 }
-var init_importable = __esm({
+var init_importable2 = __esm({
   \\"tests/fixtures/importables/importable.mjs\\"() {
     \\"use strict\\";
   }
 });
 
 // tests/fixtures/build-in/javascript.cjs
-var { exportedTSFunction } = require(\\"../importables/importable.cjs\\");
+var { exportedTSFunction: exportedTSFunction2 } = (init_importable(), __toCommonJS(importable_exports));
 var { exportedCJSFunction } = require_importable();
-var { exportedMJSFunction: exportedMJSFunction2 } = (init_importable(), __toCommonJS(importable_exports));
-exportedTSFunction();
+var { exportedMJSFunction: exportedMJSFunction2 } = (init_importable2(), __toCommonJS(importable_exports2));
+exportedTSFunction2();
 exportedCJSFunction();
 exportedMJSFunction2();
 "
@@ -88,6 +102,20 @@ var __copyProps = (to, from, except, desc) => {
 };
 var __toCommonJS = (mod) => __copyProps(__defProp({}, \\"__esModule\\", { value: true }), mod);
 
+// tests/fixtures/importables/importable.ts
+var importable_exports = {};
+__export(importable_exports, {
+  exportedTSFunction: () => exportedTSFunction
+});
+function exportedTSFunction() {
+  return 1 + 1;
+}
+var init_importable = __esm({
+  \\"tests/fixtures/importables/importable.ts\\"() {
+    \\"use strict\\";
+  }
+});
+
 // tests/fixtures/importables/importable.cjs
 var require_importable = __commonJS({
   \\"tests/fixtures/importables/importable.cjs\\"(exports2, module2) {
@@ -101,24 +129,24 @@ var require_importable = __commonJS({
 });
 
 // tests/fixtures/importables/importable.mjs
-var importable_exports = {};
-__export(importable_exports, {
+var importable_exports2 = {};
+__export(importable_exports2, {
   exportedMJSFunction: () => exportedMJSFunction
 });
 function exportedMJSFunction() {
   return 1 + 1;
 }
-var init_importable = __esm({
+var init_importable2 = __esm({
   \\"tests/fixtures/importables/importable.mjs\\"() {
     \\"use strict\\";
   }
 });
 
 // tests/fixtures/build-in/javascript.cjs
-var { exportedTSFunction } = require(\\"../importables/importable.js\\");
+var { exportedTSFunction: exportedTSFunction2 } = (init_importable(), __toCommonJS(importable_exports));
 var { exportedCJSFunction } = require_importable();
-var { exportedMJSFunction: exportedMJSFunction2 } = (init_importable(), __toCommonJS(importable_exports));
-exportedTSFunction();
+var { exportedMJSFunction: exportedMJSFunction2 } = (init_importable2(), __toCommonJS(importable_exports2));
+exportedTSFunction2();
 exportedCJSFunction();
 exportedMJSFunction2();
 "

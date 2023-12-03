@@ -96,7 +96,7 @@ var require_importable = __commonJS({
 
 // tests/fixtures/build-in/javascript.mjs
 var import_importable2 = __toESM(require_importable(), 1);
-import { exportedTSFunction } from \\"../importables/importable.js\\";
+import { exportedTSFunction } from \\"../importables/importable.cjs\\";
 
 // tests/fixtures/importables/importable.mjs
 function exportedMJSFunction() {

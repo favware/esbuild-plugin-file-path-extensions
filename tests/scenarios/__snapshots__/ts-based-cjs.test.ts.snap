@@ -97,7 +97,7 @@ var require_importable = __commonJS({
 });
 
 // tests/fixtures/build-in/typescript.cts
-var import_importable = require(\\"../importables/importable.js\\");
+var import_importable = require(\\"../importables/importable.cjs\\");
 var import_importable2 = __toESM(require_importable());
 
 // tests/fixtures/importables/importable.mjs
