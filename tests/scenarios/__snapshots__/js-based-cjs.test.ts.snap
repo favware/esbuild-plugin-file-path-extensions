@@ -1,7 +1,7 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`JS based CJS > GIVEN cjsExtension = "cjs" THEN uses cjs as file extension 1`] = `
-"\\"use strict\\";
+""use strict";
 var __defProp = Object.defineProperty;
 var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
 var __getOwnPropNames = Object.getOwnPropertyNames;
@@ -17,14 +17,14 @@ var __export = (target, all) => {
     __defProp(target, name, { get: all[name], enumerable: true });
 };
 var __copyProps = (to, from, except, desc) => {
-  if (from && typeof from === \\"object\\" || typeof from === \\"function\\") {
+  if (from && typeof from === "object" || typeof from === "function") {
     for (let key of __getOwnPropNames(from))
       if (!__hasOwnProp.call(to, key) && key !== except)
         __defProp(to, key, { get: () => from[key], enumerable: !(desc = __getOwnPropDesc(from, key)) || desc.enumerable });
   }
   return to;
 };
-var __toCommonJS = (mod) => __copyProps(__defProp({}, \\"__esModule\\", { value: true }), mod);
+var __toCommonJS = (mod) => __copyProps(__defProp({}, "__esModule", { value: true }), mod);
 
 // tests/fixtures/importables/importable.ts
 var importable_exports = {};
@@ -35,15 +35,15 @@ function exportedTSFunction() {
   return 1 + 1;
 }
 var init_importable = __esm({
-  \\"tests/fixtures/importables/importable.ts\\"() {
-    \\"use strict\\";
+  "tests/fixtures/importables/importable.ts"() {
+    "use strict";
   }
 });
 
 // tests/fixtures/importables/importable.cjs
 var require_importable = __commonJS({
-  \\"tests/fixtures/importables/importable.cjs\\"(exports2, module2) {
-    \\"use strict\\";
+  "tests/fixtures/importables/importable.cjs"(exports2, module2) {
+    "use strict";
     module2.exports = {
       exportedCJSFunction() {
         return 1 + 1;
@@ -61,8 +61,8 @@ function exportedMJSFunction() {
   return 1 + 1;
 }
 var init_importable2 = __esm({
-  \\"tests/fixtures/importables/importable.mjs\\"() {
-    \\"use strict\\";
+  "tests/fixtures/importables/importable.mjs"() {
+    "use strict";
   }
 });
 
@@ -77,7 +77,7 @@ exportedMJSFunction2();
 `;
 
 exports[`JS based CJS > GIVEN no plugin options THEN adds js as file extension 1`] = `
-"\\"use strict\\";
+""use strict";
 var __defProp = Object.defineProperty;
 var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
 var __getOwnPropNames = Object.getOwnPropertyNames;
@@ -93,14 +93,14 @@ var __export = (target, all) => {
     __defProp(target, name, { get: all[name], enumerable: true });
 };
 var __copyProps = (to, from, except, desc) => {
-  if (from && typeof from === \\"object\\" || typeof from === \\"function\\") {
+  if (from && typeof from === "object" || typeof from === "function") {
     for (let key of __getOwnPropNames(from))
       if (!__hasOwnProp.call(to, key) && key !== except)
         __defProp(to, key, { get: () => from[key], enumerable: !(desc = __getOwnPropDesc(from, key)) || desc.enumerable });
   }
   return to;
 };
-var __toCommonJS = (mod) => __copyProps(__defProp({}, \\"__esModule\\", { value: true }), mod);
+var __toCommonJS = (mod) => __copyProps(__defProp({}, "__esModule", { value: true }), mod);
 
 // tests/fixtures/importables/importable.ts
 var importable_exports = {};
@@ -111,15 +111,15 @@ function exportedTSFunction() {
   return 1 + 1;
 }
 var init_importable = __esm({
-  \\"tests/fixtures/importables/importable.ts\\"() {
-    \\"use strict\\";
+  "tests/fixtures/importables/importable.ts"() {
+    "use strict";
   }
 });
 
 // tests/fixtures/importables/importable.cjs
 var require_importable = __commonJS({
-  \\"tests/fixtures/importables/importable.cjs\\"(exports2, module2) {
-    \\"use strict\\";
+  "tests/fixtures/importables/importable.cjs"(exports2, module2) {
+    "use strict";
     module2.exports = {
       exportedCJSFunction() {
         return 1 + 1;
@@ -137,8 +137,8 @@ function exportedMJSFunction() {
   return 1 + 1;
 }
 var init_importable2 = __esm({
-  \\"tests/fixtures/importables/importable.mjs\\"() {
-    \\"use strict\\";
+  "tests/fixtures/importables/importable.mjs"() {
+    "use strict";
   }
 });
 

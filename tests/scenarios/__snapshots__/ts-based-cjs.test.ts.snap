@@ -1,7 +1,7 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`TS based CJS > GIVEN cjsExtension = "cjs" THEN uses cjs as file extension 1`] = `
-"\\"use strict\\";
+""use strict";
 var __create = Object.create;
 var __defProp = Object.defineProperty;
 var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
@@ -12,7 +12,7 @@ var __commonJS = (cb, mod) => function __require() {
   return mod || (0, cb[__getOwnPropNames(cb)[0]])((mod = { exports: {} }).exports, mod), mod.exports;
 };
 var __copyProps = (to, from, except, desc) => {
-  if (from && typeof from === \\"object\\" || typeof from === \\"function\\") {
+  if (from && typeof from === "object" || typeof from === "function") {
     for (let key of __getOwnPropNames(from))
       if (!__hasOwnProp.call(to, key) && key !== except)
         __defProp(to, key, { get: () => from[key], enumerable: !(desc = __getOwnPropDesc(from, key)) || desc.enumerable });
@@ -22,16 +22,16 @@ var __copyProps = (to, from, except, desc) => {
 var __toESM = (mod, isNodeMode, target) => (target = mod != null ? __create(__getProtoOf(mod)) : {}, __copyProps(
   // If the importer is in node compatibility mode or this is not an ESM
   // file that has been converted to a CommonJS file using a Babel-
-  // compatible transform (i.e. \\"__esModule\\" has not been set), then set
-  // \\"default\\" to the CommonJS \\"module.exports\\" for node compatibility.
-  isNodeMode || !mod || !mod.__esModule ? __defProp(target, \\"default\\", { value: mod, enumerable: true }) : target,
+  // compatible transform (i.e. "__esModule" has not been set), then set
+  // "default" to the CommonJS "module.exports" for node compatibility.
+  isNodeMode || !mod || !mod.__esModule ? __defProp(target, "default", { value: mod, enumerable: true }) : target,
   mod
 ));
 
 // tests/fixtures/importables/importable.cjs
 var require_importable = __commonJS({
-  \\"tests/fixtures/importables/importable.cjs\\"(exports2, module2) {
-    \\"use strict\\";
+  "tests/fixtures/importables/importable.cjs"(exports2, module2) {
+    "use strict";
     module2.exports = {
       exportedCJSFunction() {
         return 1 + 1;
@@ -41,7 +41,7 @@ var require_importable = __commonJS({
 });
 
 // tests/fixtures/build-in/typescript.cts
-var import_importable = require(\\"../importables/importable.cjs\\");
+var import_importable = require("../importables/importable.cjs");
 var import_importable2 = __toESM(require_importable());
 
 // tests/fixtures/importables/importable.mjs
@@ -57,7 +57,7 @@ exportedMJSFunction();
 `;
 
 exports[`TS based CJS > GIVEN no plugin options THEN adds js as file extension 1`] = `
-"\\"use strict\\";
+""use strict";
 var __create = Object.create;
 var __defProp = Object.defineProperty;
 var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
@@ -68,7 +68,7 @@ var __commonJS = (cb, mod) => function __require() {
   return mod || (0, cb[__getOwnPropNames(cb)[0]])((mod = { exports: {} }).exports, mod), mod.exports;
 };
 var __copyProps = (to, from, except, desc) => {
-  if (from && typeof from === \\"object\\" || typeof from === \\"function\\") {
+  if (from && typeof from === "object" || typeof from === "function") {
     for (let key of __getOwnPropNames(from))
       if (!__hasOwnProp.call(to, key) && key !== except)
         __defProp(to, key, { get: () => from[key], enumerable: !(desc = __getOwnPropDesc(from, key)) || desc.enumerable });
@@ -78,16 +78,16 @@ var __copyProps = (to, from, except, desc) => {
 var __toESM = (mod, isNodeMode, target) => (target = mod != null ? __create(__getProtoOf(mod)) : {}, __copyProps(
   // If the importer is in node compatibility mode or this is not an ESM
   // file that has been converted to a CommonJS file using a Babel-
-  // compatible transform (i.e. \\"__esModule\\" has not been set), then set
-  // \\"default\\" to the CommonJS \\"module.exports\\" for node compatibility.
-  isNodeMode || !mod || !mod.__esModule ? __defProp(target, \\"default\\", { value: mod, enumerable: true }) : target,
+  // compatible transform (i.e. "__esModule" has not been set), then set
+  // "default" to the CommonJS "module.exports" for node compatibility.
+  isNodeMode || !mod || !mod.__esModule ? __defProp(target, "default", { value: mod, enumerable: true }) : target,
   mod
 ));
 
 // tests/fixtures/importables/importable.cjs
 var require_importable = __commonJS({
-  \\"tests/fixtures/importables/importable.cjs\\"(exports2, module2) {
-    \\"use strict\\";
+  "tests/fixtures/importables/importable.cjs"(exports2, module2) {
+    "use strict";
     module2.exports = {
       exportedCJSFunction() {
         return 1 + 1;
@@ -97,7 +97,7 @@ var require_importable = __commonJS({
 });
 
 // tests/fixtures/build-in/typescript.cts
-var import_importable = require(\\"../importables/importable.cjs\\");
+var import_importable = require("../importables/importable.cjs");
 var import_importable2 = __toESM(require_importable());
 
 // tests/fixtures/importables/importable.mjs
