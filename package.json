@@ -31,7 +31,7 @@
   "devDependencies": {
     "@commitlint/cli": "^19.0.3",
     "@commitlint/config-conventional": "^19.0.3",
-    "@favware/cliff-jumper": "2.2.3",
+    "@favware/cliff-jumper": "3.0.0",
     "@sapphire/eslint-config": "^5.0.3",
     "@sapphire/prettier-config": "^2.0.0",
     "@sapphire/result": "^2.6.6",
