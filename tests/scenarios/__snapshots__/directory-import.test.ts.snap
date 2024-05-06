@@ -1,0 +1,10 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Importing directories > GIVEN a directory import THEN appends "index" to path 1`] = `
+"// tests/fixtures/build-in/directory-import.mjs
+import { foo } from "./directory/index.cjs";
+export {
+  foo
+};
+"
+`;

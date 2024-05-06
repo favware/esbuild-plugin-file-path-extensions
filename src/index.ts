@@ -1,5 +1,6 @@
 import type { BuildOptions, OnLoadOptions, OnResolveArgs, OnResolveResult, Plugin, PluginBuild } from 'esbuild';
-import { extname } from 'node:path';
+import { stat } from 'node:fs/promises';
+import { extname, join, sep } from 'node:path';
 
 export interface PluginOptions {
   /**
@@ -41,6 +42,15 @@ export interface PluginOptions {
    * @default 'mjs'
    */
   esmExtension?: string | ((initialOptions: BuildOptions) => Awaitable<string>);
+}
+
+async function isDirectory(cwd: string, path: string): Promise<boolean> {
+  return (
+    stat(join(cwd, path))
+      .then((result) => result.isDirectory())
+      // Catches the error for if path does not exist (code: ENOENT)
+      .catch(() => false)
+  );
 }
 
 // eslint-disable-next-line @typescript-eslint/ban-types
@@ -159,8 +169,17 @@ async function handleResolve(args: OnResolveArgs, build: PluginBuild, options: P
       const pathIsBuiltin = build.initialOptions.platform === 'node' && (await isBuiltin(args.path));
 
       if (!pathAlreadyHasExt && !pathIsBuiltin) {
+        let { path } = args;
+
+        // If the import path refers to a directory it most likely actually refers to a
+        // `index.*` file in said directory due to Node's module resolution
+        if (await isDirectory(args.resolveDir, path)) {
+          // This uses `path.sep` instead of `path.join` here because `join` removes potential "./" prefixes
+          path = `${path}${sep}index`;
+        }
+
         return {
-          path: `${args.path}.${isEsm ? esmExtension : cjsExtension}`,
+          path: `${path}.${isEsm ? esmExtension : cjsExtension}`,
           external: true,
           namespace: options.namespace
         };
