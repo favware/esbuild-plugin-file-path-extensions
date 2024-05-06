@@ -63,6 +63,16 @@ function getFilter(options: PluginOptions): RegExp {
   return options.filter ?? /.*/;
 }
 
+let builtins: string[] | null = null;
+
+async function isBuiltin(path: string): Promise<boolean> {
+  if (builtins == null) {
+    builtins = (await import('node:module')).builtinModules;
+  }
+
+  return !path.startsWith('.') && (path.startsWith('node:') || builtins.includes(path));
+}
+
 async function getIsEsm(build: PluginBuild, options: PluginOptions): Promise<boolean> {
   if (typeof options.esm === 'undefined') {
     return build.initialOptions.define?.TSUP_FORMAT === '"esm"';
@@ -146,8 +156,9 @@ async function handleResolve(args: OnResolveArgs, build: PluginBuild, options: P
 
     if (args.importer) {
       const pathAlreadyHasExt = pathExtIsJsLikeExtension(args.path);
+      const pathIsBuiltin = build.initialOptions.platform === 'node' && (await isBuiltin(args.path));
 
-      if (!pathAlreadyHasExt) {
+      if (!pathAlreadyHasExt && !pathIsBuiltin) {
         return {
           path: `${args.path}.${isEsm ? esmExtension : cjsExtension}`,
           external: true,

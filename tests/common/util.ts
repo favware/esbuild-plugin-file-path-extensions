@@ -6,10 +6,10 @@ import { esbuildPluginFilePathExtensions, type PluginOptions } from '../../dist/
 
 export function createEsbuildConfig(buildOptions: BuildOptions, pluginOptions?: PluginOptions): BuildOptions {
   return {
+    platform: 'node',
     ...buildOptions,
     outdir: buildAbsolutePath('../fixtures/build-out'),
     bundle: true,
-    platform: 'node',
     plugins: [esbuildPluginFilePathExtensions(pluginOptions)]
   };
 }
