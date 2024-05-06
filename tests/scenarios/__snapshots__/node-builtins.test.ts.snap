@@ -1,0 +1,23 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Node builtins > GIVEN platform = "browser" THEN adds extensions to builtins 1`] = `
+"// tests/fixtures/build-in/node.mts
+import assert from "assert.cjs";
+import fs from "node:fs.cjs";
+import fsp from "node:fs/promises.cjs";
+assert(true);
+fs.readdirSync(".");
+void fsp.readdir(".");
+"
+`;
+
+exports[`Node builtins > GIVEN platform = "node" THEN does not add extensions to builtins 1`] = `
+"// tests/fixtures/build-in/node.mts
+import assert from "assert";
+import fs from "node:fs";
+import fsp from "node:fs/promises";
+assert(true);
+fs.readdirSync(".");
+void fsp.readdir(".");
+"
+`;
