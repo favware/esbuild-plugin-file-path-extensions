@@ -2,9 +2,9 @@
 
 exports[`Node builtins > GIVEN platform = "browser" THEN adds extensions to builtins 1`] = `
 "// tests/fixtures/build-in/node.mts
-import assert from "assert.cjs";
-import fs from "node:fs.cjs";
-import fsp from "node:fs/promises.cjs";
+import assert from "assert.mjs";
+import fs from "node:fs.mjs";
+import fsp from "node:fs/promises.mjs";
 assert(true);
 fs.readdirSync(".");
 void fsp.readdir(".");

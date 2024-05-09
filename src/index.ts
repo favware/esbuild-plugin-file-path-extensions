@@ -85,7 +85,7 @@ async function isBuiltin(path: string): Promise<boolean> {
 
 async function getIsEsm(build: PluginBuild, options: PluginOptions): Promise<boolean> {
   if (typeof options.esm === 'undefined') {
-    return build.initialOptions.define?.TSUP_FORMAT === '"esm"';
+    return build.initialOptions.define?.TSUP_FORMAT === '"esm"' || build.initialOptions.format === 'esm';
   }
 
   if (typeof options.esm === 'boolean') {

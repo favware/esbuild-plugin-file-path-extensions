@@ -41,7 +41,7 @@ var require_importable = __commonJS({
 
 // tests/fixtures/build-in/typescript.mts
 var import_importable2 = __toESM(require_importable(), 1);
-import { exportedTSFunction } from "../importables/importable.cjs";
+import { exportedTSFunction } from "../importables/importable.js";
 
 // tests/fixtures/importables/importable.mjs
 function exportedMJSFunction() {
@@ -96,7 +96,7 @@ var require_importable = __commonJS({
 
 // tests/fixtures/build-in/typescript.mts
 var import_importable2 = __toESM(require_importable(), 1);
-import { exportedTSFunction } from "../importables/importable.cjs";
+import { exportedTSFunction } from "../importables/importable.mjs";
 
 // tests/fixtures/importables/importable.mjs
 function exportedMJSFunction() {

@@ -2,7 +2,7 @@
 
 exports[`Importing directories > GIVEN a directory import THEN appends "index" to path 1`] = `
 "// tests/fixtures/build-in/directory-import.mjs
-import { foo } from "./directory/index.cjs";
+import { foo } from "./directory/index.mjs";
 export {
   foo
 };
