@@ -76,7 +76,7 @@ function getFilter(options: PluginOptions): RegExp {
 let builtins: string[] | null = null;
 
 async function isBuiltin(path: string): Promise<boolean> {
-  if (builtins == null) {
+  if (builtins === null) {
     builtins = (await import('node:module')).builtinModules;
   }
 
