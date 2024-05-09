@@ -1,6 +1,6 @@
 import type { BuildOptions, OnLoadOptions, OnResolveArgs, OnResolveResult, Plugin, PluginBuild } from 'esbuild';
 import { stat } from 'node:fs/promises';
-import { extname, join, sep } from 'node:path';
+import { extname, join } from 'node:path';
 
 export interface PluginOptions {
   /**
@@ -174,8 +174,8 @@ async function handleResolve(args: OnResolveArgs, build: PluginBuild, options: P
         // If the import path refers to a directory it most likely actually refers to a
         // `index.*` file in said directory due to Node's module resolution
         if (await isDirectory(args.resolveDir, path)) {
-          // This uses `path.sep` instead of `path.join` here because `join` removes potential "./" prefixes
-          path = `${path}${sep}index`;
+          // This uses `/` instead of `path.join` here because `join` removes potential "./" prefixes
+          path = `${path}/index`;
         }
 
         return {
