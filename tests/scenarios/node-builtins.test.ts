@@ -5,6 +5,9 @@ function createConfig(platform: 'node' | 'browser'): BuildOptions {
   return createEsbuildConfig({
     platform,
     format: 'esm',
+    outExtension: {
+      '.js': '.mjs'
+    },
     entryPoints: [buildAbsolutePath('../fixtures/build-in/node.mts')]
   });
 }
