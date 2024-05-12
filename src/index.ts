@@ -1,5 +1,6 @@
 import type { BuildOptions, OnLoadOptions, OnResolveArgs, OnResolveResult, Plugin, PluginBuild } from 'esbuild';
-import { extname } from 'node:path';
+import { stat } from 'node:fs/promises';
+import { extname, join } from 'node:path';
 
 export interface PluginOptions {
   /**
@@ -43,6 +44,15 @@ export interface PluginOptions {
   esmExtension?: string | ((initialOptions: BuildOptions) => Awaitable<string>);
 }
 
+async function isDirectory(cwd: string, path: string): Promise<boolean> {
+  return (
+    stat(join(cwd, path))
+      .then((result) => result.isDirectory())
+      // Catches the error for if path does not exist (code: ENOENT)
+      .catch(() => false)
+  );
+}
+
 // eslint-disable-next-line @typescript-eslint/ban-types
 function isFunction(input: unknown): input is Function {
   return typeof input === 'function';
@@ -63,9 +73,19 @@ function getFilter(options: PluginOptions): RegExp {
   return options.filter ?? /.*/;
 }
 
+let builtins: string[] | null = null;
+
+async function isBuiltin(path: string): Promise<boolean> {
+  if (builtins === null) {
+    builtins = (await import('node:module')).builtinModules;
+  }
+
+  return !path.startsWith('.') && (path.startsWith('node:') || builtins.includes(path));
+}
+
 async function getIsEsm(build: PluginBuild, options: PluginOptions): Promise<boolean> {
   if (typeof options.esm === 'undefined') {
-    return build.initialOptions.define?.TSUP_FORMAT === '"esm"';
+    return build.initialOptions.define?.TSUP_FORMAT === '"esm"' || build.initialOptions.format === 'esm';
   }
 
   if (typeof options.esm === 'boolean') {
@@ -146,10 +166,20 @@ async function handleResolve(args: OnResolveArgs, build: PluginBuild, options: P
 
     if (args.importer) {
       const pathAlreadyHasExt = pathExtIsJsLikeExtension(args.path);
+      const pathIsBuiltin = build.initialOptions.platform === 'node' && (await isBuiltin(args.path));
 
-      if (!pathAlreadyHasExt) {
+      if (!pathAlreadyHasExt && !pathIsBuiltin) {
+        let { path } = args;
+
+        // If the import path refers to a directory it most likely actually refers to a
+        // `index.*` file in said directory due to Node's module resolution
+        if (await isDirectory(args.resolveDir, path)) {
+          // This uses `/` instead of `path.join` here because `join` removes potential "./" prefixes
+          path = `${path}/index`;
+        }
+
         return {
-          path: `${args.path}.${isEsm ? esmExtension : cjsExtension}`,
+          path: `${path}.${isEsm ? esmExtension : cjsExtension}`,
           external: true,
           namespace: options.namespace
         };
