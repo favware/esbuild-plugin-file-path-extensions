@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+# [2.1.0](https://github.com/favware/esbuild-plugin-file-path-extensions/compare/v2.0.0...v2.1.0) - (2024-05-12)
+
+## 🚀 Features
+
+- Handle Directory Imports, Node Builtins (#104) ([103d1b6](https://github.com/favware/esbuild-plugin-file-path-extensions/commit/103d1b61328159c84f99433f201910360f6f9c95))
+
 # [2.0.0](https://github.com/favware/esbuild-plugin-file-path-extensions/compare/v2.0.0...v2.0.0) - (2023-12-03)
 
 ## 🏠 Refactor
