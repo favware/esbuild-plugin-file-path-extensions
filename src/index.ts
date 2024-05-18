@@ -1,5 +1,5 @@
 import type { BuildOptions, OnLoadOptions, OnResolveArgs, OnResolveResult, Plugin, PluginBuild } from 'esbuild';
-import { stat } from 'node:fs/promises';
+import { readFile, stat } from 'node:fs/promises';
 import { extname, join } from 'node:path';
 
 export interface PluginOptions {
@@ -81,6 +81,22 @@ async function isBuiltin(path: string): Promise<boolean> {
   }
 
   return !path.startsWith('.') && (path.startsWith('node:') || builtins.includes(path));
+}
+
+async function isDefinedDependency(path: string): Promise<boolean> {
+  try {
+    const packageJsonPath = join(process.cwd(), 'package.json');
+    const packageJson = JSON.parse(await readFile(packageJsonPath, { encoding: 'utf-8' }));
+    const { dependencies, devDependencies, peerDependencies } = packageJson;
+
+    const dependenciesExist = Object.keys(dependencies ?? {}).some((dep) => dep === path);
+    const devDependenciesExist = Object.keys(devDependencies ?? {}).some((dep) => dep === path);
+    const peerDependenciesExist = Object.keys(peerDependencies ?? {}).some((dep) => dep === path);
+
+    return dependenciesExist || devDependenciesExist || peerDependenciesExist;
+  } catch (error) {
+    return false;
+  }
 }
 
 async function getIsEsm(build: PluginBuild, options: PluginOptions): Promise<boolean> {
@@ -167,8 +183,9 @@ async function handleResolve(args: OnResolveArgs, build: PluginBuild, options: P
     if (args.importer) {
       const pathAlreadyHasExt = pathExtIsJsLikeExtension(args.path);
       const pathIsBuiltin = build.initialOptions.platform === 'node' && (await isBuiltin(args.path));
+      const pathIsDependency = build.initialOptions.platform === 'node' && (await isDefinedDependency(args.path));
 
-      if (!pathAlreadyHasExt && !pathIsBuiltin) {
+      if (!pathAlreadyHasExt && !pathIsBuiltin && !pathIsDependency) {
         let { path } = args;
 
         // If the import path refers to a directory it most likely actually refers to a
