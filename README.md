@@ -16,11 +16,11 @@ JavaScript files based on the specified target**
   - [Description](#description)
   - [Installation](#installation)
   - [Usage](#usage)
-    - [With `esbuild`](#with-esbuild)
-    - [With `tsup`](#with-tsup)
+    - [With [`esbuild`][esbuild]](#with-esbuildesbuild)
+    - [With [`tsup`][tsup]](#with-tsuptsup)
   - [Options](#options)
   - [Buy us some doughnuts](#buy-us-some-doughnuts)
-  - [Contributors ✨](#contributors-)
+  - [Contributors](#contributors)
 
 ## Description
 
