@@ -22,22 +22,21 @@ jobs:
         with:
           node-version: 20
           cache: yarn
-          registry-url: https://registry.yarnpkg.com/
       - name: Install Dependencies
         run: yarn --immutable
       - name: Bump Version
         run: yarn cliff-jumper --preid "next.$(git rev-parse --verify --short HEAD)"
-      - name: Publish to Yarnpkg
+      - name: Publish to NPM
         run: |
           yarn config set npmAuthToken ${NODE_AUTH_TOKEN}
-          yarn config set npmPublishRegistry "https://registry.yarnpkg.com"
-          # yarn npm publish --tag next
+          yarn config set npmPublishRegistry "https://registry.npmjs.org"
+          yarn npm publish --tag next
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
       - name: Publish to GitHub
         run: |
           yarn config set npmAuthToken ${NODE_AUTH_TOKEN}
           yarn config set npmPublishRegistry "https://npm.pkg.github.com"
-          # yarn npm publish --tag next
+          yarn npm publish --tag next
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
