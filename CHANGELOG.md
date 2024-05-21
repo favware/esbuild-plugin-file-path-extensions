@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file.
 
+# [2.1.1](https://github.com/favware/esbuild-plugin-file-path-extensions/compare/v2.1.0...v2.1.1) - (2024-05-21)
+
+## 🐛 Bug Fixes
+
+- Explicitly set to CJS mode when tsup sets the format to CJS ([950d459](https://github.com/favware/esbuild-plugin-file-path-extensions/commit/950d459e01a1c7b2c4f1359d953454f155d574db))
+- Scan dependencies and do not append extensions for those ([d6bcf76](https://github.com/favware/esbuild-plugin-file-path-extensions/commit/d6bcf76bc8e49a56e94d4c7d60d4b484819d6c01))
+
+## 📝 Documentation
+
+- **readme:** Update table of contents ([ebd9570](https://github.com/favware/esbuild-plugin-file-path-extensions/commit/ebd95705f3ed84286a59db38edfacca57521f6ab))
+
 # [2.1.0](https://github.com/favware/esbuild-plugin-file-path-extensions/compare/v2.0.0...v2.1.0) - (2024-05-12)
 
 ## 🚀 Features
