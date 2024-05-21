@@ -100,14 +100,23 @@ async function isDefinedDependency(path: string): Promise<boolean> {
 }
 
 async function getIsEsm(build: PluginBuild, options: PluginOptions): Promise<boolean> {
+  // If explicitly set to CJS through tsup then we should always return false
+  if (build.initialOptions.define?.TSUP_FORMAT === '"cjs"') {
+    return false;
+  }
+
+  // Check if the option for the plugin was set or not
   if (typeof options.esm === 'undefined') {
+    // If it was unset check if tsup set the format to ESM, or esbuild resolved it as esm
     return build.initialOptions.define?.TSUP_FORMAT === '"esm"' || build.initialOptions.format === 'esm';
   }
 
+  // Check if the option was set to a boolean or a function
   if (typeof options.esm === 'boolean') {
     return options.esm;
   }
 
+  // If it was a function, call it and return the result
   return isFunction(options.esm) ? options.esm(build.initialOptions) : options.esm;
 }
 
