@@ -25,7 +25,9 @@ jobs:
       - name: Install Dependencies
         run: yarn --immutable
       - name: Bump Version
-        run: yarn cliff-jumper --preid "next.$(git rev-parse --verify --short HEAD)"
+        run: yarn cliff-jumper --preid "next.$(git rev-parse --verify --short HEAD)" --skip-changelog
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Publish to NPM
         run: |
           yarn config set npmAuthToken ${NODE_AUTH_TOKEN}
