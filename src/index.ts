@@ -87,13 +87,21 @@ async function isDefinedDependency(path: string): Promise<boolean> {
   try {
     const packageJsonPath = join(process.cwd(), 'package.json');
     const packageJson = JSON.parse(await readFile(packageJsonPath, { encoding: 'utf-8' }));
-    const { dependencies, devDependencies, peerDependencies } = packageJson;
+    const { dependencies = {}, devDependencies = {}, peerDependencies = {} } = packageJson;
 
-    const dependenciesExist = Object.keys(dependencies ?? {}).some((dep) => path.startsWith(dep));
-    const devDependenciesExist = Object.keys(devDependencies ?? {}).some((dep) => path.startsWith(dep));
-    const peerDependenciesExist = Object.keys(peerDependencies ?? {}).some((dep) => path.startsWith(dep));
+    const allDependencies = {
+      ...dependencies,
+      ...devDependencies,
+      ...peerDependencies
+    };
 
-    return dependenciesExist || devDependenciesExist || peerDependenciesExist;
+    return Object.keys(allDependencies).some((dep) => {
+      const depParts = dep.split('/');
+      const pathParts = path.split('/');
+      const maxLength = depParts.length + 1;
+
+      return pathParts.slice(0, maxLength).join('/') === dep;
+    });
   } catch (error) {
     return false;
   }
