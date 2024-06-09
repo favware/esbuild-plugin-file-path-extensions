@@ -71,3 +71,7 @@ tag_pattern = "v[0-9]*"
 ignore_tags = ""
 topo_order = false
 sort_commits = "newest"
+
+[remote.github]
+owner = "favware"
+repo = "esbuild-plugin-file-path-extensions"
