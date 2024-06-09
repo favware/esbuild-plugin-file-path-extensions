@@ -2,3 +2,8 @@ name: esbuild-plugin-file-path-extensions
 packagePath: .
 commitMessageTemplate: 'chore(release): release {{new-version}}'
 tagTemplate: v{{new-version}}
+identifierBase: false
+pushTag: true
+githubRelease: true
+githubReleaseLatest: true
+githubRepo: auto
