@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+# [2.1.2](https://github.com/favware/esbuild-plugin-file-path-extensions/compare/v2.1.1...v2.1.2) - (2024-06-09)
+
+## 🐛 Bug Fixes
+
+- Check path starts with deps instead of equality for subpath import support ([c4961f3](https://github.com/favware/esbuild-plugin-file-path-extensions/commit/c4961f3987db01a14abe014c2bdec9397472b68c)) ([#112](https://github.com/favware/esbuild-plugin-file-path-extensions/pull/112))
+
 # [2.1.1](https://github.com/favware/esbuild-plugin-file-path-extensions/compare/v2.1.0...v2.1.1) - (2024-05-21)
 
 ## 🐛 Bug Fixes
