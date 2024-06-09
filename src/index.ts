@@ -98,9 +98,8 @@ async function isDefinedDependency(path: string): Promise<boolean> {
     return Object.keys(allDependencies).some((dep) => {
       const depParts = dep.split('/');
       const pathParts = path.split('/');
-      const maxLength = depParts.length + 1;
 
-      return pathParts.slice(0, maxLength).join('/') === dep;
+      return pathParts.slice(0, depParts.length).join('/') === dep;
     });
   } catch (error) {
     return false;
