@@ -89,9 +89,9 @@ async function isDefinedDependency(path: string): Promise<boolean> {
     const packageJson = JSON.parse(await readFile(packageJsonPath, { encoding: 'utf-8' }));
     const { dependencies, devDependencies, peerDependencies } = packageJson;
 
-    const dependenciesExist = Object.keys(dependencies ?? {}).some((dep) => dep === path);
-    const devDependenciesExist = Object.keys(devDependencies ?? {}).some((dep) => dep === path);
-    const peerDependenciesExist = Object.keys(peerDependencies ?? {}).some((dep) => dep === path);
+    const dependenciesExist = Object.keys(dependencies ?? {}).some((dep) => path.startsWith(dep));
+    const devDependenciesExist = Object.keys(devDependencies ?? {}).some((dep) => path.startsWith(dep));
+    const peerDependenciesExist = Object.keys(peerDependencies ?? {}).some((dep) => path.startsWith(dep));
 
     return dependenciesExist || devDependenciesExist || peerDependenciesExist;
   } catch (error) {
