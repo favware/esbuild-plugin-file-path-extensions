@@ -31,12 +31,12 @@
   "devDependencies": {
     "@commitlint/cli": "^19.3.0",
     "@commitlint/config-conventional": "^19.2.2",
-    "@favware/cliff-jumper": "4.0.2",
+    "@favware/cliff-jumper": "4.0.3",
     "@sapphire/eslint-config": "^5.0.5",
     "@sapphire/prettier-config": "^2.0.0",
     "@sapphire/result": "^2.6.6",
     "@sapphire/ts-config": "^5.0.1",
-    "@types/node": "^20.14.11",
+    "@types/node": "^20.14.12",
     "@typescript-eslint/eslint-plugin": "^7.13.1",
     "@typescript-eslint/parser": "^7.13.1",
     "cz-conventional-changelog": "^3.3.0",
@@ -47,9 +47,9 @@
     "eslint-plugin-prettier": "^5.2.1",
     "lint-staged": "^15.2.7",
     "prettier": "^3.3.3",
-    "tsup": "^8.2.1",
+    "tsup": "^8.2.3",
     "typescript": "^5.5.2",
-    "vitest": "^2.0.3"
+    "vitest": "^2.0.4"
   },
   "repository": {
     "type": "git",
