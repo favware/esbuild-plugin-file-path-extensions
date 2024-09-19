@@ -1,0 +1,16 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Importing assets > GIVEN an asset import THEN leaves path alone 1`] = `
+"// tests/fixtures/build-in/asset.ts
+import "./asset.css";
+import styles from "./asset.module.css";
+import json from "./asset.json";
+function test() {
+  console.log("styles", styles);
+  console.log("json", json);
+}
+export {
+  test
+};
+"
+`;

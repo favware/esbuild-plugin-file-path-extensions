@@ -53,6 +53,15 @@ async function isDirectory(cwd: string, path: string): Promise<boolean> {
   );
 }
 
+async function isFile(cwd: string, path: string): Promise<boolean> {
+  return (
+    stat(join(cwd, path))
+      .then((result) => !result.isDirectory())
+      // Catches the error for if path does not exist (code: ENOENT)
+      .catch(() => false)
+  );
+}
+
 // eslint-disable-next-line @typescript-eslint/ban-types
 function isFunction(input: unknown): input is Function {
   return typeof input === 'function';
@@ -209,6 +218,15 @@ async function handleResolve(args: OnResolveArgs, build: PluginBuild, options: P
         if (await isDirectory(args.resolveDir, path)) {
           // This uses `/` instead of `path.join` here because `join` removes potential "./" prefixes
           path = `${path}/index`;
+        }
+        // If the import path exists as a file & doesn't have a js-like extension, it is probably
+        // a non-js asset import that should be left alone (for example: css or json files).
+        if (await isFile(args.resolveDir, path)) {
+          return {
+            path,
+            external: true,
+            namespace: options.namespace
+          };
         }
 
         return {
