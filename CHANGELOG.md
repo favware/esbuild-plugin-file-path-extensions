@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+# [2.1.3](https://github.com/favware/esbuild-plugin-file-path-extensions/compare/v2.1.2...v2.1.3) - (2024-09-19)
+
+## 🐛 Bug Fixes
+
+- Do not append extensions to non-js asset imports ([2cb2cb2](https://github.com/favware/esbuild-plugin-file-path-extensions/commit/2cb2cb210b65ecbdc41d1c2ceddef7b41cd27e19)) ([#134](https://github.com/favware/esbuild-plugin-file-path-extensions/pull/134))
+
 # [2.1.2](https://github.com/favware/esbuild-plugin-file-path-extensions/compare/v2.1.1...v2.1.2) - (2024-06-09)
 
 ## 🐛 Bug Fixes
