@@ -6,4 +6,5 @@ identifierBase: false
 pushTag: true
 githubRelease: true
 githubReleaseLatest: true
-githubRepo: favware/esbuild-plugin-file-path-extensions
+gitRepo: favware/esbuild-plugin-file-path-extensions
+gitHostVariant: github
