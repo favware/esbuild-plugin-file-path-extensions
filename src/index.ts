@@ -32,7 +32,7 @@ export interface PluginOptions {
    * The extension to apply for CJS code.
    * @remark Make sure to **NOT** start with a leading `.`.
    *
-   * @default 'js'
+   * @default 'cjs'
    */
   cjsExtension?: string | ((initialOptions: BuildOptions) => Awaitable<string>);
   /**
