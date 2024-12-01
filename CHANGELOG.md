@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+# [2.1.4](https://github.com/favware/esbuild-plugin-file-path-extensions/compare/v2.1.3...v2.1.4) - (2024-12-01)
+
+## 📝 Documentation
+
+- Default value for cjsExtension is "cjs" ([1594fc5](https://github.com/favware/esbuild-plugin-file-path-extensions/commit/1594fc5fd5dbb9c0dc1b66081261bd756979016e)) ([#153](https://github.com/favware/esbuild-plugin-file-path-extensions/pull/153))
+
 # [2.1.3](https://github.com/favware/esbuild-plugin-file-path-extensions/compare/v2.1.2...v2.1.3) - (2024-09-19)
 
 ## 🐛 Bug Fixes
