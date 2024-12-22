@@ -29,7 +29,7 @@
     "prepack": "yarn build"
   },
   "devDependencies": {
-    "@commitlint/cli": "^19.6.0",
+    "@commitlint/cli": "^19.6.1",
     "@commitlint/config-conventional": "^19.6.0",
     "@favware/cliff-jumper": "5.0.0",
     "@sapphire/eslint-config": "^5.0.5",
@@ -40,7 +40,7 @@
     "@typescript-eslint/eslint-plugin": "^7.13.1",
     "@typescript-eslint/parser": "^7.13.1",
     "cz-conventional-changelog": "^3.3.0",
-    "esbuild": "^0.24.0",
+    "esbuild": "^0.24.2",
     "esbuild-plugin-version-injector": "^1.2.1",
     "eslint": "^8.57.1",
     "eslint-config-prettier": "^9.1.0",
