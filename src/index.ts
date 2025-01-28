@@ -82,7 +82,7 @@ function getFilter(options: PluginOptions): RegExp {
   return options.filter ?? /.*/;
 }
 
-let builtins: string[] | null = null;
+let builtins: readonly string[] | null = null;
 
 async function isBuiltin(path: string): Promise<boolean> {
   if (builtins === null) {
