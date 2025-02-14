@@ -29,14 +29,14 @@
     "prepack": "yarn build"
   },
   "devDependencies": {
-    "@commitlint/cli": "^19.6.1",
-    "@commitlint/config-conventional": "^19.6.0",
+    "@commitlint/cli": "^19.7.1",
+    "@commitlint/config-conventional": "^19.7.1",
     "@favware/cliff-jumper": "6.0.0",
     "@sapphire/eslint-config": "^5.0.5",
     "@sapphire/prettier-config": "^2.0.0",
     "@sapphire/result": "^2.7.2",
     "@sapphire/ts-config": "^5.0.1",
-    "@types/node": "^22.13.0",
+    "@types/node": "^22.13.4",
     "@typescript-eslint/eslint-plugin": "^7.13.1",
     "@typescript-eslint/parser": "^7.13.1",
     "cz-conventional-changelog": "^3.3.0",
@@ -46,10 +46,10 @@
     "eslint-config-prettier": "^10.0.1",
     "eslint-plugin-prettier": "^5.2.3",
     "lint-staged": "^15.4.3",
-    "prettier": "^3.4.2",
+    "prettier": "^3.5.1",
     "tsup": "^8.3.6",
     "typescript": "^5.5.2",
-    "vitest": "^3.0.4"
+    "vitest": "^3.0.5"
   },
   "repository": {
     "type": "git",
