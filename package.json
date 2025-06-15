@@ -36,7 +36,7 @@
     "@sapphire/prettier-config": "^2.0.0",
     "@sapphire/result": "^2.7.2",
     "@sapphire/ts-config": "^5.0.1",
-    "@types/node": "^22.15.30",
+    "@types/node": "^22.15.31",
     "@typescript-eslint/eslint-plugin": "^7.13.1",
     "@typescript-eslint/parser": "^7.13.1",
     "cz-conventional-changelog": "^3.3.0",
@@ -45,11 +45,11 @@
     "eslint": "^8.57.1",
     "eslint-config-prettier": "^10.1.5",
     "eslint-plugin-prettier": "^5.4.1",
-    "lint-staged": "^16.1.0",
+    "lint-staged": "^16.1.1",
     "prettier": "^3.5.3",
     "tsup": "^8.5.0",
     "typescript": "^5.5.2",
-    "vitest": "^3.2.2"
+    "vitest": "^3.2.3"
   },
   "repository": {
     "type": "git",
