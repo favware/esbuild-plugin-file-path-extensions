@@ -34,7 +34,7 @@
     "@favware/cliff-jumper": "6.0.0",
     "@sapphire/eslint-config": "^5.0.6",
     "@sapphire/prettier-config": "^2.0.0",
-    "@sapphire/result": "^2.7.3",
+    "@sapphire/result": "^2.8.0",
     "@sapphire/ts-config": "^5.0.1",
     "@types/node": "^24.10.0",
     "@typescript-eslint/eslint-plugin": "^7.13.1",
@@ -49,7 +49,7 @@
     "prettier": "^3.6.2",
     "tsup": "^8.5.0",
     "typescript": "^5.5.2",
-    "vitest": "^4.0.6"
+    "vitest": "^4.0.8"
   },
   "repository": {
     "type": "git",
@@ -95,5 +95,5 @@
   "eslintConfig": {
     "extends": "@sapphire"
   },
-  "packageManager": "yarn@4.10.3"
+  "packageManager": "yarn@4.11.0"
 }
