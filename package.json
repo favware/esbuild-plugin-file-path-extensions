@@ -42,7 +42,7 @@
     "cz-conventional-changelog": "^3.3.0",
     "esbuild": "^0.25.12",
     "esbuild-plugin-version-injector": "^1.2.1",
-    "eslint": "^8.57.1",
+    "eslint": "^10.10.0",
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-prettier": "^5.5.4",
     "lint-staged": "^16.2.6",
