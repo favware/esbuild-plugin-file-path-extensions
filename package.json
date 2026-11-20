@@ -32,7 +32,7 @@
     "@commitlint/cli": "^20.1.0",
     "@commitlint/config-conventional": "^20.0.0",
     "@favware/cliff-jumper": "6.0.0",
-    "@sapphire/eslint-config": "^5.0.6",
+    "@sapphire/eslint-config": "^6.0.0",
     "@sapphire/prettier-config": "^2.0.0",
     "@sapphire/result": "^2.8.0",
     "@sapphire/ts-config": "^5.0.1",
